@@ -98,7 +98,7 @@ export function fuzzyMatch(query: string, text: string): FuzzyMatch {
  */
 export function fuzzyFilter<T>(items: T[], query: string, getText: (item: T) => string): T[] {
 	if (!query.trim()) {
-		return [];
+		return items;
 	}
 
 	const tokens = query
