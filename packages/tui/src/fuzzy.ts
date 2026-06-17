@@ -18,7 +18,7 @@ export function fuzzyMatch(query: string, text: string): FuzzyMatch {
 			return { matches: true, score: 0 };
 		}
 
-		if (normalizedQuery.length > textLower.length) {
+		if (normalizedQuery.length >= textLower.length) {
 			return { matches: false, score: 0 };
 		}
 
