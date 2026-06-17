@@ -18,7 +18,7 @@ export function fuzzyMatch(query: string, text: string): FuzzyMatch {
 			return { matches: true, score: 0 };
 		}
 
-		if (normalizedQuery.length >= textLower.length) {
+		if (normalizedQuery.length > textLower.length) {
 			return { matches: false, score: 0 };
 		}
 
@@ -132,6 +132,6 @@ export function fuzzyFilter<T>(items: T[], query: string, getText: (item: T) => 
 		}
 	}
 
-	results.sort((a, b) => b.totalScore - a.totalScore);
+	results.sort((a, b) => a.totalScore - b.totalScore);
 	return results.map((r) => r.item);
 }
